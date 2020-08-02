@@ -19,26 +19,13 @@
     </style>
 </head>
 <body>
-<!--<div>-->
-<!--    <th:block th:each="msg : ${messages}">-->
-<!--        <h1 th:text="${msg.model}"></h1>-->
-<!--        <h1 th:text="${msg.series}"></h1>-->
-<!--        <h1 th:text="${msg}"></h1>-->
-<!--    </th:block>-->
-<!--</div>-->
-<!--<ul th:object="${Car}">-->
-<!--    <li>Name: <span th:text="*{name}"></span></li>-->
-<!--    <li>Address: <span th:text="*{series}"></span></li>-->
-<!--</ul>-->
-
 <table>
     <thead>
     <tr>
-<!--        <th th:utext="${#locale.country}"> Model </th>-->
         <th>
         <div th:switch="__${#locale.language}__">
             <p th:case="en">Cars</p>
-            <p th:case="ru">Mashina</p>
+            <p th:case="ru">Машина</p>
             <p th:case="*">Cars</p>
         </div>
         </th>
