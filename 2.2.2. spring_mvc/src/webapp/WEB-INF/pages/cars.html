@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style type="text/css">
+        TABLE {
+            width: 300px; /* Ширина таблицы */
+            border-collapse: collapse; /* Убираем двойные линии между ячейками */
+        }
+        TD, TH {
+            padding: 3px; /* Поля вокруг содержимого таблицы */
+            border: 1px solid black; /* Параметры рамки */
+        }
+        TH {
+            background: #b0e0e6; /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+<!--<div>-->
+<!--    <th:block th:each="msg : ${messages}">-->
+<!--        <h1 th:text="${msg.model}"></h1>-->
+<!--        <h1 th:text="${msg.series}"></h1>-->
+<!--        <h1 th:text="${msg}"></h1>-->
+<!--    </th:block>-->
+<!--</div>-->
+<!--<ul th:object="${Car}">-->
+<!--    <li>Name: <span th:text="*{name}"></span></li>-->
+<!--    <li>Address: <span th:text="*{series}"></span></li>-->
+<!--</ul>-->
+
+<table>
+    <thead>
+    <tr>
+<!--        <th th:utext="${#locale.country}"> Model </th>-->
+        <th>
+        <div th:switch="__${#locale.language}__">
+            <p th:case="en">Cars</p>
+            <p th:case="ru">Mashina</p>
+            <p th:case="*">Cars</p>
+        </div>
+        </th>
+        <th> Series </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="msg : ${messages}">
+        <td><span th:text="${msg.model}"> Model </span></td>
+        <td><span th:text="${msg.series}"> Series </span></td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
