@@ -10,11 +10,4 @@ import web.Servise.serviseCar;
 @Configuration
 @ComponentScan(basePackages = "web")
 public class AppConfig {
-
-    @Bean(name="serviceCar")
-    public serviseCar getSrviceCar(){
-        serviseCar serviseCar = new serviseCar();
-        return serviseCar;
-    }
-
 }

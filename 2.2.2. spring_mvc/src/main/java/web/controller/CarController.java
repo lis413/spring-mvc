@@ -1,5 +1,6 @@
 package web.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -10,13 +11,13 @@ import web.config.AppConfig;
 
 @Controller
 public class CarController {
+
+    @Autowired
+    private ApplicationContext applicationContext;
+
     @GetMapping(value = "/cars")
     public String printWelcome(ModelMap model) {
-
-        ApplicationContext applicationContext =
-                new AnnotationConfigApplicationContext(AppConfig.class);
         serviseCar bean = applicationContext.getBean(serviseCar.class);
-       // serviseCar serviseCar = new serviseCar();
         model.addAttribute("messages", bean.getListCar());
         return "cars";
     }
