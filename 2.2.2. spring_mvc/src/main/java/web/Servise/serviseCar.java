@@ -1,11 +1,14 @@
 package web.Servise;
 
+import org.springframework.stereotype.Component;
 import web.Model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class serviseCar {
+
 
     public List<Car> getListCar(){
         List<Car> listCar = new ArrayList<>();
